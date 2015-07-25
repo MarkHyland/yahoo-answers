@@ -1,0 +1,15 @@
+<p>
+  <strong>Commenter:</strong>
+  <%= answer.commenter %>
+</p>
+ 
+<p>
+  <strong>Answer:</strong>
+  <%= answer.body %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Answer', [answer.question, answer],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

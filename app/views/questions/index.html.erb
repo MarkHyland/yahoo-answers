@@ -1,0 +1,23 @@
+<h1>Yahoo questions</h1>
+
+<%= link_to 'New Questions', new_question_path %>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @questions.each do |question| %>
+    <tr>
+      <td><%= question.title %></td>
+      <td><%= question.text %></td>
+      <td><%= link_to 'Show', question_path(question) %></td>
+      <td><%= link_to 'Edit', edit_question_path(question) %></td>
+      <td><%= link_to 'Destroy', question_path(question),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
